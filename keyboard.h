@@ -117,21 +117,6 @@ keyboard_t keyboard = {
     write(uin_fd, &ev, sizeof(ev));
   }
 
-  int get_kcode(const char* key) {
-    if (strlen(key) == 1) {
-      char c = key[0];
-      if (c >= 'a' && c <= 'z') return KEY_A + (c - 'a');
-      if (c >= 'A' && c <= 'Z') return KEY_A + (c - 'A');
-      if (c >= '0' && c <= '9') return KEY_0 + (c - '0');
-      if (c == ' ') return KEY_SPACE;
-    }
-    if (strcmp(key, "enter") == 0) return KEY_ENTER;
-    if (strcmp(key, "escape") == 0 || strcmp(key, "esc") == 0) return KEY_ESC;
-    if (strcmp(key, "backspace") == 0) return KEY_BACKSPACE;
-    if (strcmp(key, "tab") == 0) return KEY_TAB;
-    return 0;
-  }
-
 
   bool write_keys(const char* keys) {
    if (make_uinput() < 0) return false;
