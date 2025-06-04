@@ -232,10 +232,12 @@ keyboard_t keyboard = {
 
    bool wait_key(const char* key) {
     ERROR("Unsupported plattform: {LINUX}");
+    return false;
   }
 
   bool on_press(const char* key) { 
     ERROR("Unsupported plattform: {LINUX}");
+    return false;
   }
 
 
