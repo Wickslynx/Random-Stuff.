@@ -139,7 +139,14 @@ keyboard_t keyboard = {
       if (strcmp(key, "right") == 0) return KEY_RIGHT;
       if (strcmp(key, "f1") == 0) return KEY_F1;
       if (strcmp(key, "f2") == 0) return KEY_F2;
-      // ... add more function keys as needed
+      if (strcmp(key, "f3") == 0) return KEY_F3;
+      if (strcmp(key, "f4") == 0) return KEY_F4;
+      if (strcmp(key, "f5") == 0) return KEY_F5;
+      if (strcmp(key, "f6") == 0) return KEY_F6;
+      if (strcmp(key, "f7") == 0) return KEY_F7;
+      if (strcmp(key, "f8") == 0) return KEY_F8;
+      if (strcmp(key, "f9") == 0) return KEY_F9;
+      if (strcmp(key, "f10") == 0) return KEY_F10;
       if (strcmp(key, "left shift") == 0) return KEY_LEFTSHIFT;
       if (strcmp(key, "right shift") == 0) return KEY_RIGHTSHIFT;
       if (strcmp(key, "left ctrl") == 0) return KEY_LEFTCTRL;
@@ -152,7 +159,7 @@ keyboard_t keyboard = {
     }
     
     ERROR("Unknown key: unrecognized key string.");
-    return 0; // Indicate an unknown key
+    return false; // Indicate an unknown key
   }
 
 
